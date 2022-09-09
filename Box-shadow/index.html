@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Design</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&family=Rubik+Burned&display=swap");
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --clr-accent-400: #ff9068;
+      --clr-primary-200: #2a5298;
+      --clr-primary-300: #734b6d;
+      --clr-neutral-100: #fff;
+      --clr-neutral-200: #d3cce3;
+      --clr-neutral-900: #000c40;
+      --ff-primary: "Playfair Display", serif;
+      --ff-secondary: "Roboto", sans-serif;
+      --ff-extra: "Rubik Burned", cursive;
+    }
+    body {
+      line-height: 1.6;
+      font-size: 22px;
+      font-family: var(--ff-primary);
+      font-family: var(--ff-secondary);
+      font-family: var(--ff-extra);
+    }
+    .container {
+      --width: 1110px;
+      --padding: 1rem;
+      margin: auto;
+      max-width: min(var(--width), 100% - (var(--padding)) * 5);
+    }
+    .text-center {
+      text-align: center;
+    }
+    .bg-light {
+      background-color: var(--clr-primary-200);
+      color: var(--clr-neutral-100);
+    }
+    .bg-primary {
+      background-color: var(--clr-primary-300);
+      color: var(--clr-neutral-100);
+    }
+    .bg-accent {
+      background-color: var(--clr-accent-400);
+      color: var(--clr-neutral-100);
+    }
+    .bg-offite-light {
+      background-color: var(--clr-neutral-200);
+    }
+    .container-changes {
+      max-width: 70%;
+    }
+    .splited-col {
+      display: flex;
+      flex-direction: column;
+
+      gap: 2rem;
+    }
+    .splited-col > * {
+      flex-basis: 100%;
+    }
+
+    @media (min-width: 50em) {
+      .splited-col {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+    h2,
+    p {
+      margin-bottom: 10px;
+    }
+    h1,
+    h2 {
+      color: var(--clr-accent-400);
+      line-height: 1;
+    }
+    .h2-modifaction {
+      color: var(--clr-neutral-100);
+      color: var(--clr-neutral-900);
+      color: var(--clr-primary-300);
+    }
+    header,
+    section {
+      padding: 3rem 0;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    .wrapper {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+    .card-content {
+      --perspective: 500px;
+      --rotateX: 0;
+      --rotateY: 0;
+      --angle: 20deg;
+      transform: perspective(var(--perspective)) rotateX(var(--rotateX))
+        rotateY(var(--rotateY));
+      transition: transform 250ms;
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
+      text-align: center;
+    }
+    .tracker {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      opacity: 0.2;
+    }
+    .tracker:nth-child(3n - 1) {
+      grid-column: 2 / 3;
+    }
+    .tracker:nth-child(3n + 2) {
+      grid-column: 1 / 2;
+    }
+    .tracker:nth-child(3n) {
+      grid-column: 3 /4;
+    }
+    .tracker:nth-child(n + 4):nth-child(-n + 6) {
+      grid-row: 2;
+    }
+    .tracker:nth-child(n + 7):nth-child(-n + 9) {
+      grid-row: 3;
+    }
+    .tracker:nth-child(n + 1):nth-child(-n + 3) {
+      grid-row: 1;
+    }
+    .tracker:nth-of-type(1):hover ~ .card-content {
+      --rotateX: var(--angle);
+      --rotateY: calc(var(--angle) * -1);
+    }
+    .tracker:nth-of-type(2):hover ~ .card-content {
+      --rotateX: var(--angle);
+      /* --rotateY: -50deg; */
+    }
+    .tracker:nth-of-type(3):hover ~ .card-content {
+      --rotateX: var(--angle);
+      --rotateY: var(--angle);
+    }
+    .tracker:nth-of-type(4):hover ~ .card-content {
+      --rotateY: calc(var(--angle) * -1);
+    }
+    .tracker:nth-of-type(6):hover ~ .card-content {
+      --rotateY: var(--angle);
+    }
+    .tracker:nth-of-type(7):hover ~ .card-content {
+      --rotateY: calc(var(--angle) * -1);
+      --rotateX: calc(var(--angle) * -1);
+    }
+    .tracker:nth-of-type(8):hover ~ .card-content {
+      --rotateX: var(--angle);
+    }
+    .tracker:nth-of-type(9):hover ~ .card-content {
+      --rotateY: var(--angle);
+      --rotateX: var(--angle);
+    }
+  </style>
+  <body>
+    <header class="text-center bg-light">
+      <div class="container container-changes">
+        <p>Lorem ipsum dolor sit.</p>
+        <h1>Responsive Design Should be achieved</h1>
+      </div>
+    </header>
+    <section class="bg-offite-light">
+      <div class="container">
+        <h2 class="text-center">Quality Design</h2>
+        <div class="splited-col">
+          <div>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Dignissimos, quas odio explicabo ipsum optio dolor dolores
+            voluptatibus saepe delectus beatae, ipsam inventore quisquam eius
+            ad!
+          </div>
+          <div>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Dignissimos, quas odio explicabo ipsum optio dolor dolores
+            voluptatibus saepe delectus beatae, ipsam inventore quisquam eius
+            ad!
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-primary">
+      <div class="container">
+        <div class="splited-col">
+          <div>
+            <h2>Make Content for you</h2>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus
+              cum quia cupiditate dolores reiciendis saepe. Odit dicta tempora
+              ut velit.
+            </p>
+          </div>
+          <div class="content">
+            <div class="wrapper">
+              <div class="tracker"></div>
+              <div class="tracker"></div>
+              <div class="tracker"></div>
+              <div class="tracker"></div>
+              <div class="tracker"></div>
+              <div class="tracker"></div>
+              <div class="tracker"></div>
+              <div class="tracker"></div>
+              <div class="tracker"></div>
+              <div class="card-content">
+                <img
+                  src="https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8c3Vuc2V0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-accent">
+      <div class="container">
+        <div class="splited-col">
+          <div class="content">
+            <div class="wrapper">
+              <div class="tracker"></div>
+              <div class="tracker"></div>
+              <div class="tracker"></div>
+              <div class="tracker"></div>
+              <div class="tracker"></div>
+              <div class="tracker"></div>
+              <div class="tracker"></div>
+              <div class="tracker"></div>
+              <div class="tracker"></div>
+              <div class="card-content">
+                <img
+                  src="https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8c3Vuc2V0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div>
+            <h2 class="h2-modifaction">Make Content for you</h2>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus
+              cum quia cupiditate dolores reiciendis saepe. Odit dicta tempora
+              ut velit.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

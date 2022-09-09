@@ -1,0 +1,43 @@
+@import "var";
+@import "uti";
+@import "btn";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: $ff-body;
+  line-height: 1.6;
+}
+.showcase {
+  height: 600px;
+  background-color: $primary-clr;
+
+  color: $lg-clr;
+  header {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+    .list-styles {
+      display: flex;
+      gap: 15px;
+      li a:hover {
+        color: $secondary-clr;
+      }
+    }
+  }
+
+  &-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    img {
+      width: 70%;
+      max-width: 500px;
+    }
+  }
+}

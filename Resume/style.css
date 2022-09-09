@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap");
+:root {
+  /* --clr-primaryTxt-900: #000;
+  --clr-primaryBg-100: rgb(249, 250, 251);
+  --clr-primaryTxt-200: rgb(218, 218, 218);
+  --clr-secondaryTxt-200: rgb(51 51 51);
+  --clr-accentTxt-100: #0da2b8; */
+  --ff-primary: "Readex Pro";
+  --clr-primaryTxt-900: #fff;
+  --clr-primaryBg-100: #131415;
+  --clr-primaryTxt-200: #2b3031;
+  --clr-secondaryTxt-200: #adb0b1;
+  --clr-accentTxt-100: rgb(30, 190, 214);
+}
+* {
+  line-height: 1.5em;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--clr-primaryBg-100);
+  color: var(--clr-primaryTxt-900);
+  font-family: var(--ff-primary);
+}
+li {
+  list-style: none;
+  color: var(--clr-primaryTxt-900);
+  margin-block: 10px;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  display: block;
+}
+.clr-modification {
+  color: var(--clr-secondaryTxt-200);
+  font-size: 1em;
+}
+.container {
+  --width: 60rem;
+  --padding: 1rem;
+  max-width: min(var(--width), 100% - (var(--padding)) * 5);
+  margin: auto;
+}
+.header-section {
+  display: flex;
+  justify-content: center;
+  padding-block: 3rem;
+  flex-direction: column;
+  align-items: center;
+}
+.header-section > * {
+  margin-left: 60px;
+}
+.header-section img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.header-section h1 {
+  font-size: 3rem;
+  margin-bottom: 0.7e;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.socials > * {
+  color: var(--clr-secondaryTxt-200);
+  font-size: 18px;
+  transition: all 350ms ease;
+  margin-top: -30px;
+  margin-bottom: 10px;
+}
+.socials > *:hover {
+  color: var(--clr-accentTxt-100);
+  transform: rotateX(20deg) rotateY(20deg);
+}
+.experiance p {
+  color: var(--clr-secondaryTxt-200);
+  font-size: 13px;
+  display: inline-block;
+}
+.experiance a {
+  color: var(--clr-accentTxt-100);
+  font-size: 18px;
+}
+.header-section :nth-child(3n) {
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.qualifications h2 {
+  font-size: 30px;
+  text-align: center;
+}
+@media (min-width: 80em) {
+  .container {
+    max-width: min(var(--width), 100% - (var(--padding)) * 2);
+  }
+  .header-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .socials > * {
+    margin-bottom: 60px;
+  }
+  .qualifications :is(h2, li) {
+    text-align: left;
+  }
+  .experiance p {
+    line-height: 2;
+  }
+}

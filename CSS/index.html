@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      .container {
+        --width: 40rem;
+        --padding: 1rem;
+        margin: 100px auto;
+
+        border: 5px solid steelblue;
+
+        padding: 5rem;
+        text-align: center;
+        background-color: #f4ff;
+        color: #fff;
+        max-width: min(var(--width), 100% - (var(--padding)) * 10);
+        font-size: 2rem;
+      }
+      .btn {
+        border-radius: 100vmax;
+        padding: 1rem 2rem;
+        background-color: yellow;
+        color: #333;
+        text-align: center;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container"></div>
+    <button class="btn" onclick="addMe()">Push Me</button>
+  </body>
+  <script>
+    function addMe() {
+      var button = document.querySelector("button");
+      button.addEventListener("mouseover", () => {
+        var cars = ["audi", "guitar", "bmw"];
+        cars.push("banana");
+        cars[6] = "Strawberry";
+        console.log(cars);
+        cars.forEach((car) => {
+          var container = document.querySelector(".container");
+          var ul = document.createElement("ul");
+          ul.innerHTML = `<li> ${car[5]} </li>`;
+          console.log(ul);
+          container.appendChild(ul);
+        });
+      });
+    }
+    console.log("we are ");
+    addMe();
+  </script>
+</html>

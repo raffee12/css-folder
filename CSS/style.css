@@ -1,0 +1,19 @@
+:root {
+  --blue-green-color-wheel_60: hsla(165, 77%, 17%, 0.6);
+  --blue-green-color-wheel_10: hsla(165, 77%, 17%, 0.1);
+  /* --blue-green-color-wheel: hsl(165, 77%, 17%); hover for seconadry bgclr for primary*/
+
+  --primary-green-400: hsl(165, 77%, 15%);
+
+  /* --spanish-gray: hsl(210, 3%, 62%); hero*/
+  /* --light-gray: hsl(0, 0%, 80%); ul lists*/
+  --cultured: hsl(30, 22%, 96%);
+  /* --white: hsl(0, 0%, 100%); nav  */ 
+
+  --davys-gray: hsl(213, 5%, 34%);
+  --white_15: hsl(0, 0%, 100%, 0.15);
+  /* --neutral-black: hsl(32, 24%, 14%); primary header */
+
+  /* --primary-orange-700: hsl(38, 100%, 50%);  hover for primary bg color for seconadry*/
+  --onyx: hsl(210, 10%, 23%);
+}

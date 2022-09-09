@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Colors</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        --width: 1110px;
+        --padding: 1rem;
+        max-width: min(var(--width), 100% - (var(--padding)) * 2);
+        margin: auto;
+      }
+      .rgb {
+        padding: 5rem;
+        background-color: rgb(0 0 0 / 50);
+        color: white;
+        /* background-color: rgb(50% 100% 50%); */
+      }
+      .hsl {
+        padding: 5rem;
+        background-color: rgb(101, 50, 50);
+        background-color: hsl(150, 44%, 35%);
+        color: white;
+      }
+    </style>
+  </head>
+  <div class="container">
+    <div class="rgb">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio rerum
+      maiores veritatis eos beatae aut porro voluptatibus nesciunt repellendus,
+      dicta dolores ullam cumque voluptatum blanditiis omnis. Minus quos, maxime
+      dolores inventore explicabo molestias ea esse a dolorem soluta,
+      voluptatibus id. Velit dolorum saepe eos officia repellendus. Iusto
+      recusandae magni necessitatibus.
+    </div>
+    <div class="hsl">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel id
+      repudiandae beatae aspernatur iure quam, blanditiis at, quia porro error
+      soluta quaerat incidunt assumenda nesciunt! Libero exercitationem, tempore
+      soluta culpa, aspernatur nostrum ut dolor accusamus quaerat quis
+      asperiores voluptates doloremque blanditiis, eligendi ratione magnam enim
+      illo natus ipsa eveniet magni.
+    </div>
+  </div>
+  <body></body>
+</html>

@@ -1,0 +1,13 @@
+%btn {
+  padding: 1rem 2rem;
+  border-radius: 100vmax;
+  border: none;
+}
+.btn-primary {
+  @extend %btn;
+  background-color: lighten($primary-clr, 10%);
+}
+.btn-primary[data-type="inverted"] {
+  @extend %btn;
+  background-color: $secondary-clr;
+}

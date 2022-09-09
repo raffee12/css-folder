@@ -1,0 +1,60 @@
+.container {
+  --max-width: 80rem;
+  --padding: 1rem;
+  max-width: min(var(--max-width), 100% - (var(--padding)) * 2);
+  margin: auto;
+  border: 1px solid red;
+}
+
+.btn-primary[data-type=inverted], .btn-primary {
+  padding: 1rem 2rem;
+  border-radius: 100vmax;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #418bff;
+}
+
+.btn-primary[data-type=inverted] {
+  background-color: #ff8700;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: cursive;
+  line-height: 1.6;
+}
+
+.showcase {
+  height: 600px;
+  background-color: #0e6cff;
+  color: #f4f4f4;
+}
+.showcase header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.showcase header .list-styles {
+  display: flex;
+  gap: 15px;
+}
+.showcase header .list-styles li a:hover {
+  color: #ff8700;
+}
+.showcase-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+}
+.showcase-content img {
+  width: 70%;
+  max-width: 500px;
+}/*# sourceMappingURL=style.css.map */
